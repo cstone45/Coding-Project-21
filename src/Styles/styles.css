@@ -79,7 +79,7 @@ button:hover {
 
 .toggle-description-btn {
   background: none;
-  color: blue;
+  color: gray;
   border: none;
   cursor: pointer;
   font-size: 14px;
@@ -88,5 +88,5 @@ button:hover {
 }
 
 .toggle-description-btn:hover {
-  color: darkblue;
+  color: white;
 }
