@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; //Imports react data from react
 
-function TourCard({ tour, onRemove }) {
-  const { id, name, info, image, price } = tour;
-  const [showMore, setShowMore] = useState(false);
+function TourCard({ tour, onRemove }) { //Establishes the TourCard component
+  const { id, name, info, image, price } = tour; //Establishes what data will be displayed in each TourCard component
+  const [showMore, setShowMore] = useState(false); //Establishes a state variable to show more or less of the description depending on the button clicked
 
   return (
     <div className="tour-card">
@@ -21,10 +21,10 @@ function TourCard({ tour, onRemove }) {
         <h4>Price: ${price}</h4>
         <button onClick={() => onRemove(id)} className="not-interested-btn">
           Not Interested
-        </button>
+        </button> 
       </div>
-    </div>
+    </div> //Creates and Displays the not interested button which removes the tour from the list when clicked
   );
-}
+} //Establishes the TourCard component which displays the tour data and a button to remove the tour from the list
 
-export default TourCard;
+export default TourCard; //Exports the TourCard component

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import Gallery from './components/Gallery';
-import './Styles/styles.css';
+import { useState, useEffect } from 'react'; //Imports react data from react
+import Gallery from './components/Gallery'; //Imports the Gallery component from the components folder
+import './Styles/styles.css'; //Imports the styles formatting from the styles.css file
 
-function App() {
+function App() { //Stores the data using useState
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,14 +22,14 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }; //Fetches the data from the API and sets a loading screen while the data is loading and an Error state if the fetch fails
 
   useEffect(() => {
     fetchTours();
-  }, []);
+  }, []); //Fetches the data from the API using the useEffect function
 
   const removeTour = (id) => {
-    setTours(tours.filter((tour) => tour.id !== id));
+    setTours(tours.filter((tour) => tour.id !== id)); //Establishes a filter function to remove the tour from the list when the Remove button is clicked
   };
 
   if (loading) {
@@ -59,4 +59,4 @@ function App() {
   ); // Returns the tour data if the fetch is successful and no errors occur
 }
 
-export default App;
+export default App; //Exports the App 
