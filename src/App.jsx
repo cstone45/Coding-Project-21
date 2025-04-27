@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import TourCard from './components/TourCard';
+import './App.css';
 
 function App() {
   const [tours, setTours] = useState([]);
@@ -29,6 +28,10 @@ function App() {
     fetchTours();
   }, []);
 
+  const removeTour = (id) => {
+    setTours(tours.filter((tour) => tour.id !== id));
+  };
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -38,29 +41,14 @@ function App() {
   }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <h2>Tours</h2>
+    <div className="App">
+      <h1>Our Tours</h1>
+      <div className="tours-container">
         {tours.map((tour) => (
-          <div key={tour.id}>
-            <h3>{tour.name}</h3>
-            <p>{tour.info}</p>
-          </div>
+          <TourCard key={tour.id} tour={tour} onRemove={removeTour} />
         ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
