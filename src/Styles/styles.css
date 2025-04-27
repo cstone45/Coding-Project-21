@@ -76,3 +76,17 @@ button:hover {
   background-color: blue;
   color: white;
 }
+
+.toggle-description-btn {
+  background: none;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.toggle-description-btn:hover {
+  color: darkblue;
+}
