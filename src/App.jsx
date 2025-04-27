@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import TourCard from './components/TourCard';
+import Gallery from './components/Gallery';
 import './App.css';
 
 function App() {
@@ -43,11 +43,7 @@ function App() {
   return (
     <div className="App">
       <h1>Our Tours</h1>
-      <div className="tours-container">
-        {tours.map((tour) => (
-          <TourCard key={tour.id} tour={tour} onRemove={removeTour} />
-        ))}
-      </div>
+      <Gallery tours={tours} onRemove={removeTour} />
     </div>
   );
 }
